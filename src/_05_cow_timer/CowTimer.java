@@ -33,6 +33,7 @@ public class CowTimer {
     }
 
     public void start() throws InterruptedException {
+    	System.out.println();
         
     }
 
