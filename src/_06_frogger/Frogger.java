@@ -3,8 +3,8 @@ package _06_frogger;
 import processing.core.PApplet;
 
 public class Frogger extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
+    static final int WIDTH = 800;
+    static final int HEIGHT = 600;
     
     @Override
     public void settings() {
@@ -18,6 +18,9 @@ public class Frogger extends PApplet {
 
     @Override
     public void draw() {
+    	background(0,0,0);
+    	fill(255, 0, 0);
+    	ellipse(x, y, width, height);
 
     }
     static public void main(String[] args) {
