@@ -6,7 +6,8 @@ public class Frogger extends PApplet {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
     int x = 400;
-    int y = 300; 
+    int y = 300;
+     
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -14,7 +15,10 @@ public class Frogger extends PApplet {
 
     @Override
     public void setup() {
-
+    	Car carro = new Car();
+    	carro.size = 10;
+    	carro.speed = 100;
+    	carro.goLeft();
     }
 
     @Override
