@@ -1,21 +1,31 @@
 package _06_frogger;
 
-import processing.core.PApplet;
 
-public class Car extends PApplet{
-	int carX = 400;
-    int carY = 300;
+
+public class Car {
+	int x;
+    int y;
     int size;
     int speed;
     
+    Car (int size, int x, int y, int speed){
+		this.size = size;
+		this.x = x;
+		
+	}
 	public void display()
 	{
-		fill(0, 255, 0);
-		rect(carX , carY,  size, 50);
+		Frogger.frog.fill(0, 0, 255);
+		Frogger.frog.rect(x , y,  size, 50);
 	}
 
 	public void goLeft() {
 		// TODO Auto-generated method stub
-		carX = carX - 100;
+		if (x < -10) {
+			x = x - 100;
+		}
+		
 	}
+	
+	
 }
