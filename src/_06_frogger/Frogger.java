@@ -9,9 +9,9 @@ public class Frogger extends PApplet {
     int frogX = 400;
     int frogY = 600;
     int frogS = 25;
-    Car car1 = new Car(0, 790,10, 100);
-	Car car2 = new Car(0, 775, 25, 50);
-	Car car3 = new Car(0, 770, 5, 150);
+    Car car1 = new Car(790, 75, 10, 1);
+	Car car2 = new Car(-50, 25, 25, 5);
+	Car car3 = new Car(700, 125, 5, 7);
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -20,7 +20,9 @@ public class Frogger extends PApplet {
     @Override
     public void setup() {
     	frog = this;
-    	
+    	if (frog.intersects(car1)) {
+    		
+    	}
     
     }
 
@@ -32,17 +34,29 @@ public class Frogger extends PApplet {
     	
     	car1.goLeft();
     	car1.display();
- 
-    	car2.goLeft();
+    	
+    	
+    	car2.goRight();
     	car2.display();
-
+    	
+    	
     	car3.goLeft();
     	car3.display();
+    	
 
     }
     static public void main(String[] args) {
         PApplet.main(Frogger.class.getName());
     }
+    boolean intersects(Car car1) {
+    	 if ((frogY > car1.getY()) && frogY < car1.getY() + 50 && frogX > car1.getX() && frogX < car1.getX()+car1.getSize()) {
+    	   return true;
+    	  }
+    	 else  {
+    	  return false;
+    	 }
+    	 
+   }
     public void keyPressed(){
         if(key == CODED){
             if(keyCode == UP && frogY >= 0)

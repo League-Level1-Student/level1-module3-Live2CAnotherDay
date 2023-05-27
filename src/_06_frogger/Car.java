@@ -8,9 +8,11 @@ public class Car {
     int size;
     int speed;
     
-    Car (int size, int x, int y, int speed){
+    Car (int x, int y, int size, int speed){
 		this.size = size;
 		this.x = x;
+		this.speed = speed;
+		this.y = y;
 		
 	}
 	public void display()
@@ -21,10 +23,30 @@ public class Car {
 
 	public void goLeft() {
 		// TODO Auto-generated method stub
+		x = x - speed;
 		if (x < -10) {
-			x = x - 100;
+			x = 810;
+		
 		}
 		
+	}
+	public void goRight() {
+		// TODO Auto-generated method stub
+		x = x + speed;
+		if (x < 810) {
+			x = -10;
+			
+		}
+		
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y; 
+	}
+	public int getSize() {
+		return size;
 	}
 	
 	
